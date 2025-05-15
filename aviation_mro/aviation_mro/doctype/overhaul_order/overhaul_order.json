@@ -1,0 +1,172 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "format:OHO-.YYYY.-.{#####}",
+ "creation": "2025-05-09 14:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "item_to_overhaul",
+  "serial_no",
+  "batch_no",
+  "column_break_0",
+  "status",
+  "supplier",
+  "section_dates_costs",
+  "date_sent",
+  "expected_return_date",
+  "actual_return_date",
+  "column_break_1",
+  "overhaul_quote_amount",
+  "actual_overhaul_cost",
+  "purchase_order",
+  "section_details",
+  "work_scope",
+  "remarks",
+  "receiving_details_section",
+  "received_condition",
+  "received_grn_number"
+ ],
+ "fields": [
+  {
+   "fieldname": "item_to_overhaul",
+   "fieldtype": "Link",
+   "label": "Item to Overhaul",
+   "options": "Item",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "serial_no",
+   "fieldtype": "Link",
+   "label": "Serial No",
+   "options": "Serial No",
+   "depends_on": "eval:frappe.db.get_value('Item', doc.item_to_overhaul, 'has_serial_no')",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "batch_no",
+   "fieldtype": "Link",
+   "label": "Batch No",
+   "options": "Batch",
+   "depends_on": "eval:frappe.db.get_value('Item', doc.item_to_overhaul, 'has_batch_no')"
+  },
+  {
+   "fieldname": "column_break_0",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nSent for Overhaul\nWork In Progress\nCompleted\nReceived\nCancelled",
+   "default": "Draft",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "label": "Overhaul Shop (Supplier)",
+   "options": "Supplier",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_dates_costs",
+   "fieldtype": "Section Break",
+   "label": "Dates and Costs"
+  },
+  {
+   "fieldname": "date_sent",
+   "fieldtype": "Date",
+   "label": "Date Sent"
+  },
+  {
+   "fieldname": "expected_return_date",
+   "fieldtype": "Date",
+   "label": "Expected Return Date"
+  },
+  {
+   "fieldname": "actual_return_date",
+   "fieldtype": "Date",
+   "label": "Actual Return Date"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "overhaul_quote_amount",
+   "fieldtype": "Currency",
+   "label": "Overhaul Quote Amount"
+  },
+  {
+   "fieldname": "actual_overhaul_cost",
+   "fieldtype": "Currency",
+   "label": "Actual Overhaul Cost"
+  },
+  {
+   "fieldname": "purchase_order",
+   "fieldtype": "Link",
+   "label": "Related Purchase Order (for Overhaul Service)",
+   "options": "Purchase Order"
+  },
+  {
+   "fieldname": "section_details",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "work_scope",
+   "fieldtype": "Text Editor",
+   "label": "Work Scope Sent"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "receiving_details_section",
+   "fieldtype": "Section Break",
+   "label": "Receiving Details (Post Overhaul)"
+  },
+  {
+   "fieldname": "received_condition",
+   "fieldtype": "Select",
+   "label": "Received Condition",
+   "options": "\nOHC\nSVC\nBER"
+  },
+  {
+   "fieldname": "received_grn_number",
+   "fieldtype": "Link",
+   "label": "Goods Receipt Note (GRN)",
+   "options": "Purchase Receipt"
+  }
+ ],
+ "links": [],
+ "modified": "2025-05-09 14:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Aviation MRO",
+ "name": "Overhaul Order",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "item_to_overhaul",
+ "track_changes": 1,
+ "is_submittable": 1
+}

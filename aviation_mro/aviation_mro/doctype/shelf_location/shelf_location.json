@@ -1,0 +1,126 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "is_tree": 1,
+ "autoname": "field:shelf_location",
+ "creation": "2013-05-16 10:59:15",
+ "description": "Filter location by shelf",
+ "doctype": "DocType",
+ "document_type": "Setup",
+ "engine": "InnoDB",
+ "field_order": [
+  "details",
+  "column_break0",
+  "shelf_location_warehouse",
+  "shelf_location",
+  "shelf_description",
+  "lft",
+  "rgt",
+  "is_group",
+  "old_parent",
+  "parent_shelf_location"
+ ],
+ "fields": [
+  {
+   "fieldname": "details",
+   "fieldtype": "Section Break",
+   "oldfieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break0",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "shelf_location_warehouse",
+   "fieldtype": "Link",
+   "label": "Warehouse",
+   "options": "Warehouse",
+   "reqd": 1
+  },
+  {
+   "fieldname": "shelf_location",
+   "fieldtype": "Data",
+   "label": "Shelf Location"
+  },
+  {
+   "fieldname": "shelf_description",
+   "fieldtype": "Small Text",
+   "label": "Shelf Description"
+  },
+  {
+   "fieldname": "lft",
+   "fieldtype": "Int",
+   "label": "Left"
+  },
+    {
+   "fieldname": "rgt",
+   "fieldtype": "Int",
+   "label": "Right"
+  },
+  {
+   "fieldname": "is_group",
+   "fieldtype": "Check",
+   "label": "Is Group"
+  },
+  {
+   "fieldname": "old_parent",
+   "fieldtype": "Link",
+   "label": "Old Parent",
+   "options": "Shelf Location"
+  },
+  {
+   "fieldname": "parent_shelf_location",
+   "fieldtype": "Link",
+   "label": "Parent Shelf Location",
+   "options": "Shelf Location"
+  }
+ ],
+ "icon": "fa fa-barcode",
+ "idx": 1,
+ "links": [],
+ "modified": "2025-05-11 00:53:54.879130",
+ "modified_by": "ed@turbinetech.aero",
+ "module": "Aviation MRO",
+ "name": "Shelf Location",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Item Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Stock Manager",
+   "write": 1
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Stock User"
+  }
+ ],
+ "row_format": "Dynamic",
+ "search_fields": "item_code",
+ "show_name_in_global_search": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

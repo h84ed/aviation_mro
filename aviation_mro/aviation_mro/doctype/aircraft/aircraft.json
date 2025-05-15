@@ -1,0 +1,236 @@
+{
+ "actions": [],
+ "allow_events_in_timeline": 1,
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "field:ac_registration",
+ "creation": "2025-05-09 14:00:00",
+ "default_view": "List",
+ "doctype": "DocType",
+ "custom": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_aircraft_details",
+  "ac_image",
+  "ac_registration",
+  "aircraft_model",
+  "manufacturer",
+  "serial_number",
+  "column_break_status",
+  "status",
+  "owner_type",
+  "customer",
+  "section_operational_data",
+  "current_flight_hours",
+  "current_flight_cycles",
+  "column_break_engines",
+  "next_inspection_type",
+  "next_inspection_due_hours",
+  "next_inspection_due_cycles",
+  "next_inspection_due_date",
+  "section_compliance",
+  "ac_airworthiness_directives",
+  "ac_service_bulletins",
+  "column_break_remaining_life",
+  "remaining_hours_to_inspection",
+  "remaining_cycles_to_inspection",
+  "remaining_days_to_inspection"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_aircraft_details",
+   "fieldtype": "Section Break",
+   "label": "Aircraft Details"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "aircraft_model",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Aircraft Model/Type",
+   "options": "Item"
+  },
+  {
+   "fieldname": "manufacturer",
+   "fieldtype": "Link",
+   "label": "Manufacturer",
+   "options": "Manufacturer"
+  },
+  {
+   "fieldname": "serial_number",
+   "fieldtype": "Link",
+   "label": "Serial Number",
+   "options": "Serial No",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_status",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Active",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Active\nInactive\nUnder Maintenance\nAOG (Aircraft on Ground)"
+  },
+  {
+   "fieldname": "owner_type",
+   "fieldtype": "Select",
+   "label": "Owner Type",
+   "options": "Owned\nCustomer",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.owner_type=='Customer'",
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "section_operational_data",
+   "fieldtype": "Tab Break",
+   "label": "Operational Data Entry"
+  },
+  {
+   "fieldname": "current_flight_hours",
+   "fieldtype": "Float",
+   "label": "Current Flight Hours (FH)",
+   "precision": "2"
+  },
+  {
+   "fieldname": "current_flight_cycles",
+   "fieldtype": "Int",
+   "label": "Current Flight Cycles (FC)"
+  },
+  {
+   "fieldname": "next_inspection_type",
+   "fieldtype": "Data",
+   "label": "Next Inspection Type"
+  },
+  {
+   "fieldname": "next_inspection_due_hours",
+   "fieldtype": "Float",
+   "label": "Next Inspection Hours"
+  },
+  {
+   "fieldname": "next_inspection_due_cycles",
+   "fieldtype": "Int",
+   "label": "Next Inspection Cycles"
+  },
+  {
+   "fieldname": "next_inspection_due_date",
+   "fieldtype": "Date",
+   "label": "Next Inspection Due Date"
+  },
+  {
+   "fieldname": "column_break_remaining_life",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "remaining_hours_to_inspection",
+   "fieldtype": "Float",
+   "label": "Hours to Inspection"
+  },
+  {
+   "fieldname": "remaining_cycles_to_inspection",
+   "fieldtype": "Int",
+   "label": "Cycles to Inspection"
+  },
+  {
+   "fieldname": "remaining_days_to_inspection",
+   "fieldtype": "Int",
+   "label": "Days to Inspection"
+  },
+  {
+   "fieldname": "column_break_engines",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_compliance",
+   "fieldtype": "Tab Break",
+   "label": "TSN CSN & Compliance Summary"
+  },
+  {
+   "allow_bulk_edit": 1,
+   "columns": 3,
+   "fieldname": "ac_airworthiness_directives",
+   "fieldtype": "Table",
+   "label": "Airworthiness Directives Summary",
+   "options": "Airworthiness Directive"
+  },
+  {
+   "allow_bulk_edit": 1,
+   "columns": 3,
+   "fieldname": "ac_service_bulletins",
+   "fieldtype": "Table",
+   "label": "Service Bulletin Summary",
+   "options": "Service Bulletin"
+  },
+  {
+   "fieldname": "ac_registration",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Aircraft Registration",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "ac_image",
+   "fieldtype": "Attach Image",
+   "in_preview": 1,
+   "label": "Aircraft Image"
+  }
+ ],
+ "image_field": "ac_image",
+ "links": [],
+ "modified": "2025-05-13 14:42:06.814231",
+ "modified_by": "Administrator",
+ "module": "Aviation MRO",
+ "name": "Aircraft",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "MRO Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "MRO Technician"
+  }
+ ],
+ "quick_entry": 1,
+ "route": "aircraft",
+ "row_format": "Dynamic",
+ "show_name_in_global_search": 1,
+ "show_preview_popup": 1,
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "ac_registration",
+ "track_changes": 1
+}

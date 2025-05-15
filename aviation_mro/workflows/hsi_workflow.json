@@ -1,0 +1,19 @@
+{
+  "workflow": "Hot Section Inspection",
+  "doctype": "Work Order",
+  "states": [
+    {"state": "Quote", "doc_status": 0},
+    {"state": "In Progress", "doc_status": 0},
+    {"state": "Invoicing Stage 1", "doc_status": 0},
+    {"state": "Invoicing Stage 2", "doc_status": 0},
+    {"state": "Final Inspection", "doc_status": 0},
+    {"state": "Closed", "doc_status": 1}
+  ],
+  "transitions": [
+    {"state": "Quote", "action": "Start", "next_state": "In Progress"},
+    {"state": "In Progress", "action": "First Invoice", "next_state": "Invoicing Stage 1"},
+    {"state": "Invoicing Stage 1", "action": "Second Invoice", "next_state": "Invoicing Stage 2"},
+    {"state": "Invoicing Stage 2", "action": "Inspect", "next_state": "Final Inspection"},
+    {"state": "Final Inspection", "action": "Close", "next_state": "Closed"}
+  ]
+}

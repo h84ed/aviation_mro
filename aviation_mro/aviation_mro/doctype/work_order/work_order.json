@@ -1,0 +1,32 @@
+{
+    "doctype": "DocType",
+    "name": "Work Order",
+    "module": "Aviation MRO",
+    "custom": 1,
+    "fields": [
+        {"fieldname": "wo_number", "label": "Work Order Number", "fieldtype": "Data", "reqd": 1},
+        {"fieldname": "wo_is_active", "label": "Is Active", "fieldtype": "Check"},
+        {"fieldname": "customer", "label": "Customer", "fieldtype": "Link", "options": "Customer"},
+        {"fieldname": "project", "label": "Project", "fieldtype": "Link", "options": "Project"},
+        {"fieldname": "asset_request", "label": "Asset Request", "fieldtype": "Link", "options": "Asset Request"},
+        {"fieldname": "material_request", "label": "Material Request", "fieldtype": "Link", "options": "Material Request"},
+        {"fieldname": "wo_date", "label": "Work Order Date", "fieldtype": "Date"},
+        {"fieldname": "wo_due_date", "label": "Work Order Due Date", "fieldtype": "Date"},
+        {"fieldname": "aircraft", "label": "Aircraft", "fieldtype": "Link", "options": "Aircraft"},
+        {"fieldname": "engine", "label": "Engine", "fieldtype": "Link", "options": "Engine"},
+        {"fieldname": "wo_location", "label": "Work Order Location", "fieldtype": "Data"},
+        {"fieldname": "wo_description", "label": "Work Order Description", "fieldtype": "Small Text"},
+        {"fieldname": "wo_assigned_to", "label": "Work Order Assigned To", "fieldtype": "Link", "options": "User"},
+        {"fieldname": "wo_completed_date", "label": "Work Order Completed Date", "fieldtype": "Date"},
+        {"fieldname": "wo_type", "label": "Work Order Type", "fieldtype": "Select", "options": "Routine\nNon-Routine\nLine Maintenance"},
+        {"fieldname": "wo_priority", "label": "Work Order Priority", "fieldtype": "Select", "options": "\nHigh\nMedium\nLow"},
+        {"fieldname": "wo_approval_status", "label": "Work Order Approval Status", "fieldtype": "Select", "options": "\nPending\nApproved\nRejected"},
+        {"fieldname": "status", "label": "Status", "fieldtype": "Select", "options": "Quote\nOpen\nWIP\nQC\nClosed"},
+        {"fieldname": "tasks", "label": "Tasks", "fieldtype": "Table", "options": "Maintenance Task"},
+        {"fieldname": "release_cert", "label": "Release Certificate", "fieldtype": "Attach"},
+        {"fieldname": "release_type", "label": "Release Type", "fieldtype": "Select", "options": "FAA 8130\nEASA Form One\nCAAT Form One\nCAAN\nDGCA\nOther\nNone"},
+        {"fieldname": "wo_logbooks", "label": "Additional Documents", "fieldtype": "Table", "options": "Logbooks"}
+    ]
+   ,
+    "permissions": [{"role": "System Manager", "read": 1, "write": 1}]
+   }

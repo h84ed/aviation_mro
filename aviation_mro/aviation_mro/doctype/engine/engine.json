@@ -1,0 +1,31 @@
+{
+ "doctype": "DocType",
+ "name": "Engine",
+ "module": "Aviation MRO",
+ "custom": 1,
+ "fields": [
+  {"fieldname": "engine_title", "label": "Title", "fieldtype": "Data", "reqd": 1},
+  {"fieldname": "esn", "label": "Serial Number", "fieldtype": "Data"},  
+  {"fieldname": "engine_manufacturer", "label": "Manufacturer", "fieldtype": "Data"},  
+  {"fieldname": "engine_model", "label": "Model", "fieldtype": "Data"},
+  {"fieldname": "engine_type", "label": "Type", "fieldtype": "Data"},
+  {"fieldname": "engine_configuration", "label": "Configuration", "fieldtype": "Small Text"},
+  {"fieldname": "engine_owner", "label": "Owner", "fieldtype": "Link", "options": "Customer"},  
+  {"fieldname": "engine_location", "label": "Operating Location", "fieldtype": "Data"},
+  {"fieldname": "engine_value", "label": "USD Value", "fieldtype": "Float"},
+  {"fieldname": "engine_tsn", "label": "Engine Time Since New", "fieldtype": "Int"},
+  {"fieldname": "engine_tso", "label": "Engine Time Since Overhaul", "fieldtype": "Int"},
+  {"fieldname": "engine_csn", "label": "Engine Cycles Since New", "fieldtype": "Int"},
+  {"fieldname": "engine_cso", "label": "Engine Cycles Since Overhaul", "fieldtype": "Int"},
+  {"fieldname": "engine_cycles_remaining", "label": "Engine Cycles Remaining", "fieldtype": "Int"},
+  {"fieldname": "engine_ac", "label": "Aircraft", "fieldtype": "Link", "options": "Aircraft"},
+  {"fieldname": "engine_maintenance_status", "label": "Maintenance Status", "fieldtype": "Select", "options": "Scheduled\nCompleted\nOverdue"},
+  {"fieldname": "engine_last_maintenance_date", "label": "Last Maintenance Date", "fieldtype": "Date"},
+  {"fieldname": "engine_next_maintenance_due_date", "label": "Next Maintenance Due Date", "fieldtype": "Date"},
+  {"fieldname": "engine_maintenance_schedule", "label": "Maintenance Schedule", "fieldtype": "Link", "options": "Maintenance Schedule"},
+  {"fieldname": "engine_maintenance_tasks", "label": "Maintenance Work", "fieldtype": "Table", "options": "Maintenance Task"},
+  {"fieldname": "engine_release", "label": "Release Certificate", "fieldtype": "Attach"},
+  {"fieldname": "engine_logbooks", "label": "Logbooks", "fieldtype": "Table", "options": "Logbooks"}
+],
+ "permissions": [{"role": "System Manager", "read": 1, "write": 1}]
+}

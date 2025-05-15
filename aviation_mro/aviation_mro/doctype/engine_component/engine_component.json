@@ -1,0 +1,143 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:component_serial_no",
+ "creation": "2025-05-09 14:00:00",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "component_item",
+  "engine",
+  "component_serial_no",
+  "batch_no",
+  "llp_details_section",
+  "life_limit_hours",
+  "life_limit_cycles",
+  "life_limit_calendar_days",
+  "tsn_at_install",
+  "csn_at_install",
+  "installation_date",
+  "current_tsn",
+  "current_csn",
+  "remaining_life_hours",
+  "remaining_life_cycles",
+  "remaining_life_calendar",
+  "component_image"
+ ],
+ "fields": [
+  {
+   "fieldname": "component_item",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Component/Part",
+   "options": "Item",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:frappe.db.get_value('Item', doc.component_item, 'has_batch_no')",
+   "fieldname": "batch_no",
+   "fieldtype": "Link",
+   "label": "Batch Number",
+   "options": "Batch"
+  },
+  {
+   "fieldname": "llp_details_section",
+   "fieldtype": "Section Break",
+   "label": "LLP Details"
+  },
+  {
+   "fieldname": "life_limit_hours",
+   "fieldtype": "Float",
+   "label": "Life Limit (Hours)"
+  },
+  {
+   "fieldname": "life_limit_cycles",
+   "fieldtype": "Int",
+   "label": "Life Limit (Cycles)"
+  },
+  {
+   "fieldname": "life_limit_calendar_days",
+   "fieldtype": "Int",
+   "label": "Life Limit (Calendar Days)"
+  },
+  {
+   "fieldname": "tsn_at_install",
+   "fieldtype": "Float",
+   "label": "TSN at Installation on Engine"
+  },
+  {
+   "fieldname": "csn_at_install",
+   "fieldtype": "Int",
+   "label": "CSN at Installation on Engine"
+  },
+  {
+   "fieldname": "installation_date",
+   "fieldtype": "Date",
+   "label": "Installation Date on Engine"
+  },
+  {
+   "fieldname": "current_tsn",
+   "fieldtype": "Float",
+   "label": "Current TSN of Part",
+   "read_only": 1
+  },
+  {
+   "fieldname": "current_csn",
+   "fieldtype": "Int",
+   "label": "Current CSN of Part",
+   "read_only": 1
+  },
+  {
+   "fieldname": "remaining_life_hours",
+   "fieldtype": "Float",
+   "label": "Remaining Life (Hours)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "remaining_life_cycles",
+   "fieldtype": "Int",
+   "label": "Remaining Life (Cycles)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "remaining_life_calendar",
+   "fieldtype": "Data",
+   "label": "Remaining Life (Calendar)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "engine",
+   "fieldtype": "Link",
+   "label": "Engine",
+   "options": "Engine"
+  },
+  {
+   "depends_on": "eval:frappe.db.get_value('Item', doc.component_item, 'has_serial_no')",
+   "fieldname": "component_serial_no",
+   "fieldtype": "Link",
+   "label": "Serial Number",
+   "options": "Serial No",
+   "unique": 1
+  },
+  {
+   "fieldname": "component_image",
+   "fieldtype": "Attach Image",
+   "label": "Image"
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2025-05-13 14:48:25.223144",
+ "modified_by": "Administrator",
+ "module": "Aviation MRO",
+ "name": "Engine Component",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

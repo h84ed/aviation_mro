@@ -1,0 +1,257 @@
+
+:root {
+	--bg-color:  #e5e8eb;
+	--btn-primary: #4A90E2;
+	--btn-secondary: #E0F2FE;
+	--secondary: #76cdf2;
+	--navbar-bg: #212529;
+	--text-btn-color: white;
+	--table-border-color: #7fc9ff;
+	--btn-default-hover-bg: white;
+	--sidebar-select-color: #E0F2FE;
+	--checkbox-gradient: linear-gradient(180deg, var(--btn-primary) -124.51%, var(--btn-primary) 100%);
+	--text-base: 0.9rem;
+}
+
+/* **************************************************************** */
+/* *****************************************************login page */
+
+[data-path="login"] .navbar-light {
+	border-bottom: 1px solid var(--blue-400) !important;
+	background: white;
+}
+
+[data-path="login"] .web-footer {
+	border-top: 1px solid var(--blue-400) !important;
+}
+
+.for-login .page-card {
+	border: 1px solid var(--blue-400) !important;
+}
+
+.for-login .btn-login{
+	background-color: var(--blue-800) !important;
+	border: none !important;
+	color: white;
+}
+
+.for-login .btn-login:hover{
+	background-color: var(--blue-600) !important;
+	border: none !important;
+	color: white;
+}
+
+.for-login .page-card-head h4 {
+	color: black !important;
+}
+
+.for-login .form-control, .for-login .form-control{
+	background-color: white !important;
+	border: solid 1px var(--blue-400) !important;
+}
+
+.for-login .form-control:focus, .for-login .form-control:hover{
+	box-shadow: 0 0 0 1px var(--blue-300) !important;
+}
+
+.for-login .page-card .page-card-body .forgot-password-message>* {
+	color: var(--blue-600) !important;
+}
+
+/* **************************************************** */
+/* ************************************** NAVBAR DESIGN */
+
+.navbar .navbar-expand span, 
+.navbar .navbar-expand li a,
+#navbar-breadcrumbs a,
+.navbar .nav-item button.nav-link{ 
+	color: var(--btn-default-hover-bg) !important;
+
+}
+
+#navbar-breadcrumbs li.disabled a {
+  color: var(--white-overlay-400) !important;
+}
+
+.nav-tabs{ 
+	border:none;
+}
+/* **************************************************** */
+/* ************************************** PAGE DESIGN */
+
+body, .page-container { 
+	background-color: var(--bg-color) !important;
+}
+
+.page-head { 
+	background-color: white !important;
+}
+
+.es-icon {
+	@extend .icon;
+	fill :  #E0F2FE !important; 
+	stroke:  #E0F2FE !important;
+}
+
+.page-content .layout-main-section{
+        background-color: white;
+}
+
+.datatable .dt-cell {
+  background-color: #fff !important;
+}
+
+/* **************************************************** */
+/* ************************************** DASHBOARD DESIGN */
+
+.desk-sidebar-item{
+	line-height: 1.4;
+}
+
+.widget.links-widget-box, .widget.dashboard-widget-box {
+	border: 1px solid #E0F2FE;
+}
+
+.widget.links-widget-box .widget-head .widget-label .widget-title{
+	background-color: white;
+	color: #0284C7 !important;
+}
+
+.widget-body .link-item{
+	margin-bottom: 5px !important;
+}
+
+.onboard-spotlight {
+	color: var(--secondary) !important;
+}
+
+a.onboard-spotlight .link-content:hover {
+	color: var(--btn-secondary) !important;
+}
+
+.dropdown-notifications .es-icon{
+	@extend .icon;
+	fill :  white !important; 
+	stroke:  white !important;
+}
+
+/* **************************************************** */
+/* ************************************** LIST GRID DESIGN */
+
+.list-filters .form-control, .standard-filter-section .form-control, .standard-filter-section .form-control {
+	box-shadow: 0 0 0 1px rgba(124, 124, 124, 0.25) !important;
+}
+
+.level.list-row-head, .level.list-row-head .level-item {
+	font-weight:bold;
+	background-color: var(--gray-300);
+}
+.list-row-container .list-row:hover{
+	background-color: var(--sidebar-select-color);
+}
+
+.list-filters .form-control:focus, .list-filters .form-control:hover,
+.standard-filter-section .form-control:focus, .standard-filter-section .form-control:hover {
+	box-shadow: 0 0 0 2px rgba(124, 124, 124, 0.25) !important;
+}
+
+/* **************************************************** */
+/* **************************************  FORM DESIGN  */
+
+input[type="checkbox"]:checked {
+	background-color: var(--btn-secondary) !important;
+	background-image: url("data:image/svg+xml, <svg viewBox='0 0 8 7' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M1 4.00001L2.66667 5.80001L7 1.20001' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg>"),var(--checkbox-gradient) !important;
+}
+
+.datepicker {
+	 background-color: var(--bg-color) !important;
+}
+
+/* **************************************************** */
+/* ************************************** BUTTONS DESIGN */
+
+.btn{
+	border-radius: 0.25rem !important;
+}
+
+.btn.btn-primary{
+	color: var(--text-btn-color);
+	border: solid 2px #4A90E2 !important;
+}
+
+.btn.btn-primary:hover {
+	background: var(--btn-default-hover-bg) !important;
+	border: solid 2px #4A90E2 !important;
+	color: var(--text-color);
+  }
+
+.standard-actions .btn.btn-secondary{
+	background: var(--secondary) !important;
+        border: solid 2px var(--secondary) !important;
+	color: var(--text-btn-color);
+}
+
+.standard-actions .btn.btn-secondary:hover{
+	background: var(--btn-default-hover-bg) !important;
+    	border: solid 2px var(--secondary) !important;
+	color: var(--text-color);
+}
+
+.custom-actions .btn.btn-default{
+	background: var(--secondary) !important;
+        border: solid 2px var(--secondary) !important;
+	color: var(--text-btn-color);
+}
+
+.custom-actions .btn.btn-default:hover{
+	background: var(--btn-default-hover-bg) !important;
+    	border: solid 2px var(--secondary) !important;
+	color: var(--text-color);
+}
+
+.btn.btn-secondary .es-icon{
+	@extend .icon;
+	fill :  white !important; 
+	stroke:  white !important;
+}
+
+.btn.btn-default {
+	background: var(--btn-default-hover-bg) !important;
+    border: solid 1px var(--btn-secondary) !important;
+    color: var(--text-color);
+}
+
+.btn.grid-add-row{
+	background: var(--btn-default-hover-bg) !important;
+    border: solid 1px var(--btn-secondary) !important;
+    color: var(--text-color);
+}
+
+.btn.btn-new-doc{
+	background-color: #4A90E2 !important;
+	color: var(--text-btn-color);
+	border: solid 2px #4A90E2 !important;
+}
+
+.btn.btn-new-doc:hover{
+	background: var(--btn-default-hover-bg) !important;
+	border: solid 2px #4A90E2 !important;
+	color: var(--text-color);
+}
+
+.custom-actions .btn{
+	font-size: 0.9rem !important;
+}
+
+.btn-group > .btn:not(:last-child):not(.dropdown-toggle), div#driver-popover-item .driver-popover-footer .btn-group > button:not(:last-child):not(.dropdown-toggle), .btn-group > .btn-group:not(:last-child) > .btn, div#driver-popover-item .driver-popover-footer .btn-group > .btn-group:not(:last-child) > button {
+	border-top-right-radius: 0 !important;
+	border-bottom-right-radius: 0 !important;  
+}
+
+.btn-group > .btn:not(:first-child), div#driver-popover-item .driver-popover-footer .btn-group > button:not(:first-child), .btn-group > .btn-group:not(:first-child) > .btn, div#driver-popover-item .driver-popover-footer .btn-group > .btn-group:not(:first-child) > button {
+	border-top-left-radius: 0 !important;
+	border-bottom-left-radius: 0 !important;
+}
+.es-icon {
+	stroke: #161718;
+}
